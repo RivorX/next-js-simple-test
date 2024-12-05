@@ -19,7 +19,8 @@ export default async function Home() {
   const data: User[] = await getUsers();
 
   //Zamiast tego podstawowego returna, zwróć listę użytkowników (frontend nie ma znaczenia)
-  // Oraz link do pojedynczego uzytkownika
+  // Oraz link do pojedynczego uzytkownika wyglądający tak: /[userId]
+
   return (
     <div>Weblance :)</div>
   );

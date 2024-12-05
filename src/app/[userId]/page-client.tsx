@@ -1,6 +1,7 @@
 "use client"
 
 import { User } from "@/types/user";
+//import { getSingleUser } from "../actions"; <- docelowa funkcja api do pobierania usera
 
 //tutaj zrób komponent kliencki, który będzie się renderować, będzie oczekiwać na dane z serwera i je wyświetli
 // jeśli nie bedzie miał jeszcze danych to wyświetli "Loading..."
@@ -12,11 +13,16 @@ import { User } from "@/types/user";
 
 
 export default function PageClient({ userId }: { userId: User["user_id"] }) {
-    //logika tanstackquery
+    //logika useQuery()
+
 
     //logika czy zwróciło usera?
-    //tzn jeśli ten userId był błędny to zwróć "User not found"
-    //jeśli user nie jest zdefiniowany to zwróć "Loading..."
+    //tzn jeśli tanstack ma error to zwróć go
+
+
+    //jeśli tanstack ładuje się to zwróć "Loading..."
+
+    //jeśli tanstack zwrócił usera to wyświetl go zamiast samego id
     return (
         <div>{userId}</div>
     )
