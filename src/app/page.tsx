@@ -4,7 +4,7 @@
 // W przypadku braku "use client" komponent będzie renderowany po stronie serwera
 
 import { User } from '@/types/user';
-import mockData from '../mock-data.json'
+import mockData from '../mock-data.json';
 
 export default async function Home() {
 
@@ -22,6 +22,15 @@ export default async function Home() {
   // Oraz link do pojedynczego uzytkownika wyglądający tak: /[userId]
 
   return (
-    <div>Weblance :)</div>
+    <div>
+      <h1>Lista Użytkowników</h1>
+      <ul>
+        {data.map(user => (
+          <li key={user.user_id}>
+            {user.name} - <a href={`/${user.user_id}`}>Profil</a>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

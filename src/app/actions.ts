@@ -13,16 +13,16 @@ import mockData from '../mock-data.json'
 export const getSingleUser = async (userId: User["user_id"]) => {
     const users: User[] = mockData;
 
-    //const user = ?
+    const user = users.find(user => user.user_id === userId);
 
 
-    //error handling
-    //if(!user) throw new Error("User not found");
+    // error handling
+    if(!user) throw new Error("User not found");
 
     //Zostaw to tak jak jest aby zasymulować pobieranie danych z bazy danych, tylko odkomentuj:)
-    // return new Promise<User | null>((resolve) => {
-    //     setTimeout(() => {
-    //         resolve(user);
-    //     }, 500);
-    // });
+    return new Promise<User | null>((resolve) => {
+        setTimeout(() => {
+            resolve(user);
+        }, 500);
+    });
 }
